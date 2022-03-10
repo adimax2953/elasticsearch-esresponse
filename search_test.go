@@ -61,8 +61,8 @@ func setupSearchTestCase() {
 	}
 
 	req := esapi.IndexRequest{
-		Index:      "gaasdemo-service-event-log-20201228-724001",
-		DocumentID: "192.168.56.54#0001",
+		Index:      "demo-service-event-log-20201228-724001",
+		DocumentID: "192.168.0.1#0001",
 		Body:       bytes.NewReader(getSearchTestCase()),
 		Refresh:    "true",
 	}
@@ -80,9 +80,9 @@ func setupSearchTestCase() {
 func getSearchTestCase() []byte {
 	return []byte(`{
 		"timestamp": 1560973500123,
-		"event_id" : "192.168.56.54#0001",
+		"event_id" : "192.168.0.1#0001",
 		"category" : "WalletService",
-		"source"   : "192.168.56.54",
+		"source"   : "192.168.0.1",
 		"type"     : "PASS",
 		"version"  : "v0.1.0b",
 		"message"  : "\"GET /downloads/product_2 HTTP/1.1\" 304 0 \"-\" \"Debian APT-HTTP/1.3 (0.9.7.9)\"",
